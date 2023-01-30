@@ -1,26 +1,22 @@
+import Navbar from "./components/Navbar.jsx";
+
 function App() {
   return (
     <>
-      <header className="hidden">
-        <h1>Manage Inc.</h1>
-      </header>
-      <nav>
-        <img src="../public/logo.svg" alt="Logo Manage" />
-        <div>
-          <button>Pricing</button>
-          <button>Product</button>
-          <button>About Us</button>
-          <button>Careers</button>
-          <button>Community</button>
-          <button>Get Started</button>
-        </div>
-      </nav>
-      <main>
-        <section>
+      <Navbar />
+
+      <main className="min-w-full flex flex-col items-center p-7 pt-0">
+        <div
+          className="translate-x-1/3 -translate-y-1/3  flex justify-center bg-scroll bg-right-top relative bg-no-repeat bg-contain"
+          style={{ backgroundImage: `url("/bg-tablet-pattern.svg")` }}
+        >
           <img
-            src="../public/illustration-intro.svg"
+            className="h-80 w-80  -translate-x-1/3 translate-y-1/3"
+            src="/illustration-intro.svg"
             alt="Graphs of time managment"
           />
+        </div>
+        <section>
           <h2>Bring everyone together to build better products.</h2>
           <p>
             Manage makes it simple for software teams to plan day-to-day tasks
@@ -73,10 +69,11 @@ function App() {
             team productivity solution.
           </p>
         </section>
+
         <section>
           <h2>What they've said</h2>
           <figure>
-            <img src="../public/avatar-ali.png" alt="Ali Bravo" />
+            <img src="/avatar-ali.png" alt="Ali Bravo" />
             <figcaption>
               <b>Ali Bravo</b>
             </figcaption>
@@ -108,13 +105,13 @@ function App() {
           <button>Privacy Policy</button>
         </div>
         <div>
-          <img src="../public/icon-facebook.svg" alt="Facebook Logo" />
-          <img src="../public/icon-youtube.svg" alt="Youtube Logo" />
-          <img src="../public/icon-twitter.svg" alt="Twitter Logo" />
-          <img src="../public/icon-pinterest.svg" alt="Pinterest Logo" />
-          <img src="../public/icon-instagram" alt="Intagram Logo" />
+          <img src="/icon-facebook.svg" alt="Facebook Logo" />
+          <img src="/icon-youtube.svg" alt="Youtube Logo" />
+          <img src="/icon-twitter.svg" alt="Twitter Logo" />
+          <img src="/icon-pinterest.svg" alt="Pinterest Logo" />
+          <img src="/icon-instagram" alt="Intagram Logo" />
         </div>
-        <img src="../public/logo.svg" alt="" />
+        <img src="/logo.svg" alt="" />
         <p>Copyright 2020. All Rights Reserved</p>
       </footer>
     </>

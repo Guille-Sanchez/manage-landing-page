@@ -1,11 +1,28 @@
+import { useState } from "react";
 import Navbar from "./components/Navbar.jsx";
+function handleSubmit(e) {
+  // Prevent the browser from reloading the page
+  e.preventDefault();
+
+  // Read the form data
+  const form = e.target;
+  const formData = new FormData(form);
+
+  // You can pass formData as a fetch body directly:
+  fetch("/some-api", { method: form.method, body: formData });
+
+  // Or you can work with it as a plain object:
+  const formJson = Object.fromEntries(formData.entries());
+  console.log(formJson);
+}
 
 function App() {
+  const [firstName, setFirstName] = useState("");
   return (
     <>
       <Navbar />
 
-      <main className="min-w-full p-7 pt-0">
+      <main className="min-w-full">
         <div className="flex w-screen justify-center">
           <img
             className="block h-80 w-80"
@@ -13,7 +30,7 @@ function App() {
             alt="Graphs of time managment"
           />
         </div>
-        <section>
+        <section className="p-7">
           <h2 className="text-center text-3xl font-extrabold text-gray-800">
             Bring everyone together to build better products.
           </h2>
@@ -28,7 +45,7 @@ function App() {
           </div>
         </section>
 
-        <section>
+        <section className="p-7">
           <h2 className="pr-8 pl-8 pt-20 pb-2 text-center text-2xl font-extrabold text-gray-800">
             What's different about Manage?
           </h2>
@@ -39,7 +56,7 @@ function App() {
           </p>
         </section>
 
-        <section className="pt-4">
+        <section className="p-7 pt-4">
           <h2 className="-mr-10 rounded-l-full bg-orange-300 bg-opacity-25 pt-1 pb-1 font-extrabold text-slate-800">
             <span className="rounded-full bg-orange-600 pl-4 pr-4 pt-1 pb-1 text-center text-slate-200">
               01
@@ -54,7 +71,7 @@ function App() {
           </p>
         </section>
 
-        <section className="pt-4">
+        <section className="p-7 pt-4">
           <h2 className="-mr-10 rounded-l-full bg-orange-300 bg-opacity-25 pt-1 pb-1 font-extrabold text-slate-800">
             <span className="rounded-full bg-orange-600 pl-4 pr-4 pt-1 pb-1 text-center text-slate-200">
               02{" "}
@@ -68,7 +85,7 @@ function App() {
           </p>
         </section>
 
-        <section className="pt-4">
+        <section className="p-7 pt-4">
           <h2 className="-mr-10 rounded-l-full bg-orange-300 bg-opacity-25 pt-1 pb-1 font-extrabold text-slate-800">
             <span className="rounded-full bg-orange-600 pl-4 pr-4 pt-1 pb-1 text-center text-slate-200">
               03{" "}
@@ -82,7 +99,7 @@ function App() {
           </p>
         </section>
 
-        <section>
+        <section className="p-7">
           <h2 className="pr-8 pl-8 pt-20 pb-2 text-center text-2xl font-extrabold text-gray-800">
             What they've said
           </h2>
@@ -104,34 +121,87 @@ function App() {
           </div>
         </section>
 
-        <section className="pt-10">
-          <h2>Simplify how your team works today.</h2>
-          <button>Get Started</button>
+        <section className="min-w-full p-0 pt-20">
+          <div className="flex w-screen flex-col items-center bg-orange-600 bg-opacity-90 pt-20 pb-20">
+            <h2 className=" pb-10 text-center text-3xl font-extrabold text-slate-200">
+              Simplify how your team works today.
+            </h2>
+            <button className="rounded-full bg-slate-100 p-2 pl-6 pr-6 text-sm font-semibold text-orange-600">
+              Get Started
+            </button>
+          </div>
         </section>
       </main>
-      <footer>
-        <form action="">
-          <input type="text" />
-          <button></button>
+
+      <footer className="bg-slate-800 pt-8">
+        <form
+          method="post"
+          onSubmit={handleSubmit}
+          className="flex justify-evenly"
+        >
+          <input
+            placeholder="Updates in your inbox..."
+            value={firstName}
+            onChange={(e) => setFirstName(e.target.value)}
+            className="rounded-full border-2 border-stone-900 pl-5"
+          />
+          <button className="rounded-full bg-orange-600 p-2 pl-6 pr-6 text-sm font-semibold text-slate-200">
+            Go
+          </button>
         </form>
-        <div>
-          <button>Home</button>
-          <button>Pricing</button>
-          <button>Products</button>
-          <button>About Us</button>
-          <button>Careers</button>
-          <button>Commnity</button>
-          <button>Privacy Policy</button>
-        </div>
-        <div>
-          <img src="/icon-facebook.svg" alt="Facebook Logo" />
-          <img src="/icon-youtube.svg" alt="Youtube Logo" />
-          <img src="/icon-twitter.svg" alt="Twitter Logo" />
-          <img src="/icon-pinterest.svg" alt="Pinterest Logo" />
-          <img src="/icon-instagram" alt="Intagram Logo" />
-        </div>
-        <img src="/logo.svg" alt="" />
-        <p>Copyright 2020. All Rights Reserved</p>
+        <nav aria-label="secondary" className="pt-10">
+          <ul className="flex justify-evenly text-slate-200">
+            <div className="flex flex-col gap-y-2">
+              <li>
+                <a>Home</a>
+              </li>
+              <li>Pricing</li>
+              <li>Products</li>
+              <li>About Us</li>
+            </div>
+
+            <div className="flex flex-col gap-y-2">
+              <li>Careers</li>
+              <li>Commnity</li>
+              <li>Privacy Policy</li>
+            </div>
+          </ul>
+        </nav>
+
+        <section
+          aria-label="Social Media Links"
+          className="flex justify-evenly pt-10"
+        >
+          <a>
+            <img className="w-8" src="/icon-facebook.svg" alt="Facebook Logo" />
+          </a>
+          <a>
+            <img className="w-8" src="/icon-youtube.svg" alt="Youtube Logo" />
+          </a>
+          <a>
+            <img className="w-8" src="/icon-twitter.svg" alt="Twitter Logo" />
+          </a>
+          <a>
+            <img
+              className="w-8"
+              src="/icon-pinterest.svg"
+              alt="Pinterest Logo"
+            />
+          </a>
+          <a>
+            <img
+              className="w-8"
+              src="/icon-instagram.svg"
+              alt="Instagram Logo"
+            />
+          </a>
+        </section>
+        <section className="pt-10">
+          <img src="/logo-footer.svg" className="m-auto" alt="" />
+          <p className="pt-10 pb-10 text-center text-xs font-semibold text-slate-200 text-opacity-50">
+            Copyright 2020. All Rights Reserved
+          </p>
+        </section>
       </footer>
     </>
   );

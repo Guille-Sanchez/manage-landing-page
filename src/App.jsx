@@ -5,65 +5,77 @@ function App() {
     <>
       <Navbar />
 
-      <main className="min-w-full flex flex-col items-center p-7 pt-0">
-        <div
-          className="translate-x-1/3 -translate-y-1/3  flex justify-center bg-scroll bg-right-top relative bg-no-repeat bg-contain"
-          style={{ backgroundImage: `url("/bg-tablet-pattern.svg")` }}
-        >
+      <main className="min-w-full p-7 pt-0">
+        <div className="flex w-screen justify-center">
           <img
-            className="h-80 w-80  -translate-x-1/3 translate-y-1/3"
+            className="block h-80 w-80"
             src="/illustration-intro.svg"
             alt="Graphs of time managment"
           />
         </div>
         <section>
-          <h2>Bring everyone together to build better products.</h2>
-          <p>
+          <h2 className="text-center text-3xl font-extrabold text-gray-800">
+            Bring everyone together to build better products.
+          </h2>
+          <p className="p-4 text-center text-xs font-semibold text-gray-900 text-opacity-40">
             Manage makes it simple for software teams to plan day-to-day tasks
-            while keeping the larger team goals in view
+            while keeping the larger team goals in view.
           </p>
-          <button>Get Started</button>
+          <div className="flex justify-center">
+            <button className="rounded-full bg-orange-600 p-2 pl-6 pr-6 text-sm font-semibold text-slate-200">
+              Get Started
+            </button>
+          </div>
         </section>
 
         <section>
-          <h2>What's different about Manage?</h2>
-          <p>
+          <h2 className="pr-8 pl-8 pt-20 pb-2 text-center text-2xl font-extrabold text-gray-800">
+            What's different about Manage?
+          </h2>
+          <p className="p-4 text-center text-xs font-semibold text-gray-900 text-opacity-40">
             Manage provides all the functionality your team needs, without the
-            complexity. Our SOftware is tailor-made for modern digital product
+            complexity. Our Software is tailor-made for modern digital product
             teams.
           </p>
         </section>
 
-        <section>
-          <div>
-            <p>01</p>
-            <h2>Track company-wide progress</h2>
-          </div>
-          <p>
+        <section className="pt-4">
+          <h2 className="-mr-10 rounded-l-full bg-orange-300 bg-opacity-25 pt-1 pb-1 font-extrabold text-slate-800">
+            <span className="rounded-full bg-orange-600 pl-4 pr-4 pt-1 pb-1 text-center text-slate-200">
+              01
+            </span>{" "}
+            Track company-wide progress
+          </h2>
+
+          <p className="pt-2 text-xs text-gray-900 text-opacity-40">
             See how your day-to-day tasks fit into the wider vision. Go from
             tracking progress at the milestone level all the way done to the
             smallest of details. Never lose sight of the bigger picture again.
           </p>
         </section>
 
-        <section>
-          <div>
-            <p>02</p>
-            <h2>Advanced built-in reports</h2>
-          </div>
-          <p>
+        <section className="pt-4">
+          <h2 className="-mr-10 rounded-l-full bg-orange-300 bg-opacity-25 pt-1 pb-1 font-extrabold text-slate-800">
+            <span className="rounded-full bg-orange-600 pl-4 pr-4 pt-1 pb-1 text-center text-slate-200">
+              02{" "}
+            </span>
+            Advanced built-in reports
+          </h2>
+          <p className="pt-2 text-xs text-gray-900 text-opacity-40">
             Set internal delivery estimates and track progress toward company
-            goals. Our Customisable dashboard helps you build out reports you
+            goals. Our customisable dashboard helps you build out reports you
             need to keep key stakeholders informed.
           </p>
         </section>
 
-        <section>
-          <div>
-            <p>03</p>
-            <h2>Everything you need in one place</h2>
-          </div>
-          <p>
+        <section className="pt-4">
+          <h2 className="-mr-10 rounded-l-full bg-orange-300 bg-opacity-25 pt-1 pb-1 font-extrabold text-slate-800">
+            <span className="rounded-full bg-orange-600 pl-4 pr-4 pt-1 pb-1 text-center text-slate-200">
+              03{" "}
+            </span>
+            Everything you need in one place
+          </h2>
+          <p className="pt-2  text-xs text-gray-900 text-opacity-40">
             Stop jumping from one service to another to communicate, store
             files, track tasks and share documents. Manage offers an all-in-one
             team productivity solution.
@@ -71,21 +83,28 @@ function App() {
         </section>
 
         <section>
-          <h2>What they've said</h2>
-          <figure>
-            <img src="/avatar-ali.png" alt="Ali Bravo" />
+          <h2 className="pr-8 pl-8 pt-20 pb-2 text-center text-2xl font-extrabold text-gray-800">
+            What they've said
+          </h2>
+          <figure className="flex flex-col place-items-center">
+            <img className="w-16" src="/avatar-ali.png" alt="Ali Bravo" />
             <figcaption>
               <b>Ali Bravo</b>
             </figcaption>
-            <blockquote>
+            <blockquote className="pt-2  text-xs text-gray-900 text-opacity-40">
               We have been able to cancel so many other subscriptions since
               using Manage. There is no more cross-channel confusion and
               everyone is much more focused.
             </blockquote>
           </figure>
-          <div></div>
+          <div className="flex justify-center">
+            <button className="rounded-full bg-orange-600 p-2 pl-6 pr-6 text-sm font-semibold text-slate-200">
+              Get Started
+            </button>
+          </div>
         </section>
-        <section>
+
+        <section className="pt-10">
           <h2>Simplify how your team works today.</h2>
           <button>Get Started</button>
         </section>

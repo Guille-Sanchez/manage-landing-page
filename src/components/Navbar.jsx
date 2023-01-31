@@ -2,7 +2,7 @@ import React from "react";
 
 function Navbar() {
   return (
-    <div className="min-w-full flex justify-between p-7">
+    <div className="flex w-screen justify-between p-7">
       <header>
         <h1 className="invisible h-0 w-0">Manage Inc.</h1>
         <img src="/logo.svg" alt="Logo Manage" />
@@ -26,9 +26,8 @@ function Navbar() {
           </li>
         </ul>
       </nav>
-      {/*z-10*/}
       <button
-        className="sm:hidden z-10"
+        className="sm:hidden"
         onClick={() => {
           console.log("hola");
         }}

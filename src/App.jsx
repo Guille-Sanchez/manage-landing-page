@@ -173,7 +173,7 @@ function App () {
 
         <section
           aria-label="Social Media Links"
-          className="flex justify-evenly pt-10"
+          className="flex justify-evenly items-center pt-10"
         >
           <a>
             <img className="w-8" src="/icon-facebook.svg" alt="Facebook Logo" />

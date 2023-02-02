@@ -22,7 +22,7 @@ function App() {
     <>
       <Navbar />
 
-      <main className="min-w-full">
+      <main>
         <div className="flex w-screen justify-center">
           <img
             className="block h-80 w-80"
@@ -30,7 +30,8 @@ function App() {
             alt="Graphs of time managment"
           />
         </div>
-        <section className="p-7">
+
+        <section className="relative p-7">
           <h2 className="text-center text-3xl font-extrabold text-gray-800">
             Bring everyone together to build better products.
           </h2>
@@ -43,6 +44,7 @@ function App() {
               Get Started
             </button>
           </div>
+          <div className="absolute -z-10 translate-x-52 -translate-y-36 bg-[url('/bg-tablet-pattern.svg')] bg-cover bg-scroll bg-no-repeat p-36"></div>
         </section>
 
         <section className="p-7">
@@ -121,9 +123,10 @@ function App() {
           </div>
         </section>
 
-        <section className="min-w-full p-0 pt-20">
-          <div className="flex w-screen flex-col items-center bg-orange-600 bg-opacity-90 pt-20 pb-20">
-            <h2 className=" pb-10 text-center text-3xl font-extrabold text-slate-200">
+        <section className="relative w-screen overflow-hidden p-0 pt-20">
+          <div className="absolute -translate-x-96 translate-y-32 bg-[url('/bg-tablet-pattern.svg')] bg-cover bg-scroll bg-no-repeat p-72 opacity-10"></div>
+          <div className="flex w-screen flex-col items-center bg-orange-600 bg-opacity-90 pt-32 pb-32">
+            <h2 className="pb-10 text-center text-5xl font-extrabold leading-tight text-slate-200">
               Simplify how your team works today.
             </h2>
             <button className="rounded-full bg-slate-100 p-2 pl-6 pr-6 text-sm font-semibold text-orange-600">

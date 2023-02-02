@@ -1,7 +1,6 @@
-import React from "react";
+import React from 'react'
 
-function Navbar() {
-  //-z-10 translate-x-16 -translate-y-32 origin-top-right
+function Navbar () {
   return (
     <>
       <div className="relative flex w-screen justify-between p-7">
@@ -9,7 +8,7 @@ function Navbar() {
           <h1 className="invisible h-0 w-0">Manage Inc.</h1>
           <img src="/logo.svg" alt="Logo Manage" />
         </header>
-        <nav className="relative  hidden  bg-black sm:block ">
+        <nav className="relative  hidden sm:block ">
           <div className="absolute -z-10 translate-x-10 -translate-y-24 bg-[url('/bg-tablet-pattern.svg')] bg-cover bg-scroll bg-no-repeat p-44"></div>
 
           <ul className="flex">
@@ -30,10 +29,10 @@ function Navbar() {
             </li>
           </ul>
         </nav>
-        <div className="relative  bg-black sm:hidden">
+        <div className="relative  sm:hidden">
           <button
             onClick={() => {
-              console.log("hola");
+              console.log('hola')
             }}
           >
             <img src="/icon-hamburger.svg" alt="Menu Icon" />
@@ -43,7 +42,7 @@ function Navbar() {
         </div>
       </div>
     </>
-  );
+  )
 }
 
-export default Navbar;
+export default Navbar

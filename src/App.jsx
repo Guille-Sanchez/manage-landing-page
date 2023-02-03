@@ -4,6 +4,7 @@ import Carousel from './components/Carousel.jsx'
 import FucntionalitiesList from './components/FucntionalitiesList.jsx'
 import ManageProductInformation from './components/ManageProductInformation.jsx'
 import Navbar from './components/Navbar.jsx'
+import ButtonGetStarted from './components/ButtonGetStarted.jsx'
 function handleSubmit (e) {
   // Prevent the browser from reloading the page
   e.preventDefault()
@@ -46,9 +47,7 @@ function App () {
 
         <section className="relative p-7 pt-2">
           <div className="flex justify-center">
-            <button className="rounded-full bg-orange-600 p-2 pl-6 pr-6 text-sm font-semibold text-slate-200">
-              Get Started
-            </button>
+            <ButtonGetStarted/>
           </div>
         <div className="absolute -z-10 translate-x-52 -translate-y-52 bg-[url('/bg-tablet-pattern.svg')] bg-cover bg-scroll bg-no-repeat p-36"></div>
         </section>

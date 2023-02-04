@@ -4,7 +4,6 @@ import Carousel from './components/Carousel.jsx'
 import FucntionalitiesList from './components/FucntionalitiesList.jsx'
 import ManageProductInformation from './components/ManageProductInformation.jsx'
 import Navbar from './components/Navbar.jsx'
-import ButtonGetStarted from './components/ButtonGetStarted.jsx'
 function handleSubmit (e) {
   // Prevent the browser from reloading the page
   e.preventDefault()
@@ -33,6 +32,7 @@ function App () {
     title: 'Everything you need in one place',
     body: 'Stop jumping from one service to another to communicate, store files, track tasks and share documents. Manage offers an all-in-one team productivity solution.'
   }]
+
   const ABOUT_MANAGE = {
     title: 'Bring everyone together to build better products.',
     body: 'Manage makes it simple for software teams to plan day-to-day tasks while keeping the larger team goals in view.'
@@ -41,29 +41,25 @@ function App () {
     <>
       <Navbar/>
       <main>
-        <Banner/>
+        <div className='flex flex-col sm:flex-row-reverse sm:items-center sm:justify-around'>
+          <Banner/>
+          <ManageProductInformation ABOUT_MANAGE={ABOUT_MANAGE}/>
+        </div>
 
-        <ManageProductInformation ABOUT_MANAGE={ABOUT_MANAGE}/>
+        <div className='flex flex-col lg:flex-row lg:items-center lg:justify-around'>
+          <section className="p-7 pt-16 sm:pt-7 lg:w-1/2 lg:flex lg:flex-col lg:place-items-center">
+            <h2 className="text-center text-3xl xl:text-4xl 2xl:text-5xl 2xl:leading-normal font-extrabold text-gray-800 lg:w-3/4">
+              What&apos;s different about Manage?
+            </h2>
+            <p className="p-4 pl-11 pr-11 lg:pr-0 lg:pl-0 leading-relaxed text-justify text-xs sm:text-sm md:text-lg sm:text-center xl:text-xl 2xl:leading-normal font-semibold text-gray-900 text-opacity-40 lg:w-3/4">
+              Manage provides all the functionality your team needs, without the
+              complexity. Our software is tailor-made for modern digital product
+              teams.
+            </p>
+          </section>
 
-        <section className="relative p-7 pt-2">
-          <div className="flex justify-center">
-            <ButtonGetStarted/>
-          </div>
-        <div className="absolute -z-10 translate-x-52 -translate-y-52 bg-[url('/bg-tablet-pattern.svg')] bg-cover bg-scroll bg-no-repeat p-36"></div>
-        </section>
-
-        <section className="p-7 pt-16">
-          <h2 className="pr-16 pl-16  pb-2 text-justify text-2xl font-extrabold text-gray-800">
-            What&apos;s different about Manage?
-          </h2>
-          <p className="p-4 pr-8 pl-8  leading-loose text-center text-xs font-semibold text-gray-900 text-opacity-40">
-            Manage provides all the functionality your team needs, without the
-            complexity. Our software is tailor-made for modern digital product
-            teams.
-          </p>
-        </section>
-
-        <FucntionalitiesList functionalities={functionalities}/>
+          <FucntionalitiesList functionalities={functionalities}/>
+        </div>
 
         <Carousel/>
 

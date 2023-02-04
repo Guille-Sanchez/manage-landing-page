@@ -13,14 +13,16 @@ function Navbar () {
   if (hideNavModal) {
     return (
       <>
-        <div className='relative flex w-screen justify-between p-7'>
+        <div className='relative flex w-screen justify-between p-7 items-center lg:pl-16 lg:pr-16'>
           <header>
             <h1 className="invisible h-0 w-0">Manage Inc.</h1>
             <img src="/logo.svg" alt="Logo Manage" />
           </header>
 
           <nav>
-            <NavBackground/>
+            <div className='md:hidden'>
+              <NavBackground />
+            </div>
             <div className='sm:hidden'> {/* Displays Hamburguer or close button in sm breakpoint */}
               <button
                 onClick={toggleHideNavModal}
@@ -30,19 +32,22 @@ function Navbar () {
             </div>
 
             <div className='hidden sm:block'>
-            <div className='sm:hidden'> {/* Displays Hamburguer or close button in sm breakpoint */}
-              <button onClick={toggleHideNavModal} >
-                <img src='/icon-hamburger.svg' alt="Menu Icon" />
-              </button>
-            </div>
-              <ul className='flex'>
+              <div className='sm:hidden'> {/* Displays Hamburguer or close button in sm breakpoint */}
+                <button onClick={toggleHideNavModal} >
+                  <img src='/icon-hamburger.svg' alt="Menu Icon" />
+                </button>
+              </div>
+              <ul className='flex items-center gap-3 sm:gap-1 lg:gap-3 justify-around pr-7 lg:pl-16 lg:pr-16'>
                 {navLinks.map((link) => {
                   return (<li key={link}>{link}</li>)
                 })}
-                <li className='hidden md:block'><ButtonGetStarted/></li>
               </ul>
             </div>
           </nav>
+          <div className='hidden md:block pr-7'>
+            <NavBackground/>
+            <ButtonGetStarted/>
+            </div>
         </div>
       </>
     )

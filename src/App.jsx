@@ -20,7 +20,7 @@ function App () {
           <ManageProductInformation/>
         </div>
 
-        <div className='flex flex-col lg:flex-row lg:items-center lg:justify-around'>
+        <div className='flex flex-col lg:flex-row lg:items-start lg:justify-around'>
           <AboutManage/>
           <FucntionalitiesList/>
         </div>

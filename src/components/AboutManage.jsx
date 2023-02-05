@@ -2,7 +2,7 @@ import React from 'react'
 
 function AboutManage () {
   return (
-    <section className="p-7 pt-16 sm:pt-7 lg:w-1/2 lg:flex lg:flex-col lg:place-items-center">
+    <section className="relative p-7 pt-16 sm:pt-7 lg:pt-0 lg:w-1/2 lg:flex lg:flex-col lg:place-items-center">
       <h2 className="text-center text-3xl xl:text-4xl 2xl:text-5xl 2xl:leading-normal font-extrabold text-gray-800 lg:w-3/4">
         What&apos;s different about Manage?
       </h2>
@@ -11,6 +11,8 @@ function AboutManage () {
         complexity. Our software is tailor-made for modern digital product
         teams.
       </p>
+      <div className={'hidden lg:block absolute -left-96 top-52 -z-10 bg-[url(\'/bg-tablet-pattern.svg\')] bg-cover bg-scroll bg-no-repeat p-80'}/>
+
     </section>
   )
 }

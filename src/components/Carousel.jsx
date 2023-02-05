@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import { BsChevronLeft, BsChevronRight } from 'react-icons/bs'
 import CarouselPages from './CarouselPages'
+import ButtonGetStarted from './ButtonGetStarted.jsx'
 
 function Carousel () {
   const USERS_FEEDBACK = [{ image: '/avatar-anisha.png', name: 'Anisha Li', body: 'Manage has supercharged our team’s workflow. The ability to maintain visibility on larger milestones at all times keeps everyone motivated.' },
@@ -42,19 +43,19 @@ function Carousel () {
       <h2 className="pr-8 pl-8 pb-2 text-center text-2xl font-extrabold text-gray-800">
         What they&apos;ve said
       </h2>
-        <div className='sm:flex'>
-          <CarouselPages USERS_FEEDBACK={USERS_FEEDBACK} currentPosition={firstPosition}/>
-          <div className='hidden sm:block'>
-            <CarouselPages USERS_FEEDBACK={USERS_FEEDBACK} currentPosition={secondPosition}/>
-          </div>
-          <div className='hidden xl:block'>
-            <CarouselPages USERS_FEEDBACK={USERS_FEEDBACK} currentPosition={thirdPosition}/>
-          </div>
+
+      <div className='sm:flex justify-between'>
+        <CarouselPages USERS_FEEDBACK={USERS_FEEDBACK} currentPosition={firstPosition}/>
+        <div className='hidden sm:block'>
+          <CarouselPages USERS_FEEDBACK={USERS_FEEDBACK} currentPosition={secondPosition}/>
         </div>
+        <div className='hidden xl:block'>
+          <CarouselPages USERS_FEEDBACK={USERS_FEEDBACK} currentPosition={thirdPosition}/>
+        </div>
+      </div>
+
       <div className="pt-4 flex justify-center">
-        <button className="rounded-full bg-orange-600 p-2 pl-6 pr-6 text-sm font-semibold text-slate-200">
-          Get Started
-        </button>
+        <ButtonGetStarted color={'bg-orange-600'}/>
       </div>
 
       <div className='flex pt-4 justify-center gap-2 sm:hidden'>

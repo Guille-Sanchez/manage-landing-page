@@ -12,12 +12,12 @@ function CarouselPages (props) {
 
   return (
     <figure className="flex flex-col place-items-center">
-      <img className="w-16" src={USERS_FEEDBACK[currentPosition].image} alt={USERS_FEEDBACK[currentPosition].name} />
+      <img className="w-16 sm:w-20" src={USERS_FEEDBACK[currentPosition].image} alt={USERS_FEEDBACK[currentPosition].name} />
       <figcaption>
-        <b>{USERS_FEEDBACK[currentPosition].name}</b>
+        <b className='sm:text-lg'>{USERS_FEEDBACK[currentPosition].name}</b>
       </figcaption>
 
-      <blockquote className="pt-2 pr-9 pl-9 text-center leading-loose text-xs text-gray-900 text-opacity-40">
+      <blockquote className="pt-2 pr-9 pl-9 text-center leading-loose text-xs sm:text-base text-gray-900 text-opacity-40">
         &ldquo;{USERS_FEEDBACK[currentPosition].body}&rdquo;
       </blockquote>
     </figure>
